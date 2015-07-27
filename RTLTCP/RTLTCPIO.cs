@@ -334,7 +334,8 @@ namespace SDRSharp.RTLTCP
                     Close();
                     break;
                 }
-            }            
+            }
+	    GC.KeepAlive(recUnsafeBuffer);            
         }
 
         private void ProcessSamples(byte* rawPtr, int len)
